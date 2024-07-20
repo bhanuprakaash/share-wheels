@@ -5,6 +5,7 @@ const cors = require("cors");
 require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const authRoute = require("./Routes/AuthRoute");
+const userDetailsRoute = require("./Routes/UserDetailsRoute");
 const {PORT} = process.env;
 const app = express();
 
@@ -34,3 +35,4 @@ app.use(cookieParser());
 app.use(express.json());
 
 app.use("/",authRoute);
+app.use("/",userDetailsRoute);
